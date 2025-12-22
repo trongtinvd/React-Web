@@ -1,0 +1,52 @@
+.LoginForm {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    grid-template-rows: auto auto auto;
+    grid-template-areas:
+        'username unInput login'
+        'password pwInput login'
+        'empty rememberme signup';
+    gap: 0.5rem;
+
+    font-size: 0.9rem;
+}
+
+.LoginForm__username {
+    grid-area: username;
+    align-self: center;
+    justify-self: end;
+}
+
+.LoginForm__unInput {
+    grid-area: unInput;
+}
+
+.LoginForm__password {
+    grid-area: password;
+    align-self: center;
+    justify-self: end;
+}
+
+.LoginForm__pwInput {
+    grid-area: pwInput;
+}
+
+.LoginForm__rememberme {
+    grid-area: rememberme;
+    justify-self: end;
+    align-self: center;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.LoginForm__login {
+    grid-area: login;
+}
+
+.LoginForm__signup {
+    grid-area: signup;
+    justify-self: center;
+    align-self: center;
+}

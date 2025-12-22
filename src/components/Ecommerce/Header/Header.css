@@ -1,0 +1,23 @@
+.Header__wrapper {
+    display: flex;
+    justify-content: center;
+
+    position: sticky;
+    top: 0;
+    
+    background-color: cadetblue;
+}
+
+.Header {
+    width: min(1200px, 90vw);
+    padding: 1rem 0;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.Header__home {
+    text-decoration: none;
+    color: white;
+}

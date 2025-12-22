@@ -1,0 +1,16 @@
+.AmountPicker {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+
+    width: fit-content;
+    height: 2rem;
+}
+
+.AmountPicker__input{
+    flex:1;
+}
+
+.AmountPicker__button{
+    aspect-ratio: 1;
+}

@@ -1,0 +1,49 @@
+.SignupPage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.SignupPage__form {
+    display: grid;
+    grid-template-columns: auto 30rem;
+    grid-template-rows: repeat(7, 3rem);
+    grid-template-areas:
+        'title title'
+        'username usernameInput'
+        'password passwordInput'
+        'email emailInput'
+        'avatar avatarInput'
+        'submit submit'
+        'error error';
+    gap: 0.5rem;
+}
+
+.SignupPage__title {
+    grid-area: title;
+
+    justify-self: center;
+}
+
+.SignupPage__label {
+    align-self: center;
+    justify-self: start;
+    font-size: 1.2rem;
+}
+
+.SignupPage__input {
+    padding: 0 0.5rem;
+}
+
+.SignupPage__submit {
+    grid-area: submit;
+}
+
+.SignupPage__status {
+    grid-area: error;
+    color: var(--SignupPage-statusColor, red);
+
+    min-width: 0;
+    max-width: 30rem;
+    overflow-wrap: anywhere;
+}

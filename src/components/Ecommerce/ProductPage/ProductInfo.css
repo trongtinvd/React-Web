@@ -1,0 +1,48 @@
+.ProductInfo {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+
+    width: fit-content;
+    height: fit-content;
+}
+
+.ProductInfo__body {
+    display: grid;
+    grid-template-columns: 6rem 1fr;
+    grid-template-rows: repeat(3, 2rem);
+}
+
+.ProductInfo__body_name {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+
+    padding: 0.5rem;
+}
+
+.ProductInfo__body_content {
+    display: flex;
+    align-items: center;
+
+    width: 20rem;
+    height: 2rem;
+}
+
+.ProductInfo__buttons {
+    width: 100%;
+    height: 2rem;
+    display: flex;
+    justify-content: flex-start;
+    gap: 1rem;
+}
+
+.ProductInfo__buttons_buying,
+.ProductInfo__buttons_addToCart {
+    width: 8rem;
+}
+
+.ProductInfo__fakePrice {
+    text-decoration: line-through;
+    color: gray;
+}

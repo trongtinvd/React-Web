@@ -1,0 +1,53 @@
+.Carousel {
+    position: relative;
+    width: fit-content;
+    height:fit-content;
+}
+
+.Carousel__container {
+    overflow: scroll;
+    scroll-snap-type: var(--Carousel-scroll, x) mandatory;
+    scroll-behavior: smooth;
+}
+
+.Carousel__container::-webkit-scrollbar {
+    display: none;
+}
+
+.Carousel__containerStyling {
+    display: flex;
+    flex-direction: var(--Carousel-direction, row);
+    gap: var(--Carousel-containerGap, 0);
+
+    padding: var(--Carousel-containerGap, 0);
+    width: var(--Carousel-containerWidth, 10rem);
+    height: var(--Carousel-containerHeight, 10rem);
+}
+
+.Carousel__item {
+    scroll-snap-align: center;
+    aspect-ratio: 1;
+    object-fit: contain;
+}
+
+.Carousel__hightlighted {
+    box-shadow: 0 0 0.3rem 0.1rem hsl(245 100% 50% / 60%);
+}
+
+.Carousel__navLeftButton {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translate(0%, -50%);
+    width: 2rem;
+    height: 2rem;
+}
+
+.Carousel__navRightButton {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translate(0%, -50%);
+    width: 2rem;
+    height: 2rem;
+}

@@ -1,0 +1,15 @@
+.ProductGallery {
+    display: flex;
+    width: fit-content;
+    outline: 1px solid black;
+}
+
+.ProductGallery__main{
+    width:20rem;
+    height:20rem;
+}
+
+.ProductGallery__sub{
+    width: 5rem;
+    height: 20rem;
+}

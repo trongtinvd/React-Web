@@ -1,0 +1,31 @@
+.ProductPage__wrapper {
+    display: flex;
+    justify-content: center;
+    padding: 0.5rem 0;
+}
+
+.ProductPage {
+    width: min(1200px, 90vw);
+
+    display: grid;
+    grid-template-areas:
+        'pic body'
+        'desc desc';
+    justify-items: center;
+    align-items: start;
+    gap: 1rem;
+}
+
+.ProductPage__images {
+    grid-area: pic;
+    justify-self: end;
+}
+
+.ProductPage__body {
+    grid-area: body;
+    justify-self: start;
+}
+
+.ProductPage__description {
+    grid-area: desc;
+}
