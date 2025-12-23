@@ -3,11 +3,15 @@ import Header from "./Header/Header";
 import Footer from "./Footer/Footer";
 import './EcommerceLayout.css';
 
-function EcommerceLayout({className=''}) {
+function EcommerceLayout({ className = '' }) {
     return (
         <div className={'EcommerceLayout ' + className}>
             <Header />
-            <Outlet />
+            <div className="EcommerceLayout__bodyWrapper">
+                <div className="EcommerceLayout__body">
+                    <Outlet />
+                </div>
+            </div>
             <Footer />
         </div>
     )

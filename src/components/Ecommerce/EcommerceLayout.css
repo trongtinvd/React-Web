@@ -4,3 +4,14 @@
     display: grid;
     grid-template-rows: auto 1fr auto;
 }
+
+.EcommerceLayout__bodyWrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.EcommerceLayout__body{
+    width: min(1200px, 95vw);
+}

@@ -1,23 +1,51 @@
 .Header__wrapper {
     display: flex;
     justify-content: center;
+    align-items: center;
 
     position: sticky;
     top: 0;
-    
+
     background-color: cadetblue;
 }
 
 .Header {
     width: min(1200px, 90vw);
-    padding: 1rem 0;
+    padding-top: 1rem;
 
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
 }
 
-.Header__home {
+.Header__titleAndLogin {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.Header__title {
     text-decoration: none;
     color: white;
+}
+
+.Header__navLinks {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 0.3rem;
+    width: 100%;
+}
+
+.Header__navLink {
+    color: white;
+    font-size: 1.2rem;
+    text-decoration: none;
+    padding: 0.3rem;
+}
+
+.Header__navLink.active {
+    color: orange;
 }
