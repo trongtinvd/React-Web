@@ -33,8 +33,8 @@ function Header({ className = '' }) {
                     <LoginForm />
                 </div>
                 <div className='Header__navLinks'>
-                    {links.map(link =>
-                        <NavLink to={link.url} className='Header__navLink' end={link.end} >{link.name}</NavLink>
+                    {links.map((link, index) =>
+                        <NavLink key={index} to={link.url} className='Header__navLink' end={link.end} >{link.name}</NavLink>
                     )}
                 </div>
             </header>

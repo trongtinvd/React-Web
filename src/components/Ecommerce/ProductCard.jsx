@@ -1,5 +1,6 @@
 import { Link } from 'react-router';
 import './ProductCard.css';
+import { formatPriceVND } from '../../pureFunctions';
 
 
 function ProductCard({ className, product }) {
@@ -7,16 +8,14 @@ function ProductCard({ className, product }) {
     if (!product)
         return null;
 
-    const { id, title, price, images } = product;
-    const image = images[0];
-    const formattedPrice = new Intl.NumberFormat("en-US", { style: "currency", currency: "USD", }).format(price);
+    const { id, name, minPrice, image } = product;
 
     return (
         <Link to={`/ecommerce/product/${id}`} className={`ProductCard ${className ?? ''}`}>
-            <img src={image} alt={title} className='ProductCard__image' />
-            <h2 className='ProductCard__title'>{title}</h2>
+            <img src={image} alt={name} className='ProductCard__image' />
+            <h2 className='ProductCard__title'>{name}</h2>
             <div className='ProductCard__footing'>
-                <span className='ProductCard__price'>{formattedPrice}</span>
+                <span className='ProductCard__price'>{formatPriceVND(minPrice)}</span>
                 <span>★★★★★</span>
             </div>
         </Link>

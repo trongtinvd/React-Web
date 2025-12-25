@@ -1,31 +1,38 @@
 import { useEffect, useRef, useState } from "react";
 import ProductCard from "./ProductCard";
+import MyLogger from "../../assets/utils/MyLogger";
 import './ProductListing.css'
 const apiUrl = import.meta.env.VITE_APP_API_URL;
 
-function ProductListing({ className = '', searchParams = {} }) {
+function ProductListing({ className = '', searchParams }) {
     const [products, setProducts] = useState([]);
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
+        const log = MyLogger();
         const controller = new AbortController();
         const params = new URLSearchParams(searchParams);
-        fetch(`${apiUrl}/products?${params}`, { signal: controller.signal })
+        log('/products fetching');
+        fetch(`${apiUrl}/products?${params}`, { 
+            signal: controller.signal,
+         })
             .then(res => {
                 if (!res.ok)
                     throw new Error(`/products error: ${res.status} ${res.statusText}`)
                 return res.json()
             })
-            .then(res => {
-                setProducts(res.slice(0, 25));
+            .then(products => {
+                log('/products', products)
+                setProducts(products.slice(0, 25));
                 setLoading(false);
             })
             .catch(err => {
-                console.log('error:', err);
+                log('error:', err);
             })
         return () => {
+            log('/products cleanup');
             setLoading(true);
-            controller.abort('/product fetch canceled')
+            controller.abort(`/product fetch canceled ${JSON.stringify(searchParams)}`);
         };
     }, [searchParams])
 
